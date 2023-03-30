@@ -4,7 +4,7 @@
         <div class="header-title">
             {{ $baseURLRegex := "^https?://[^/]+/" }}
             {{ $homeURL := findRE $baseURLRegex $.Site.BaseURL }}
-            <a href="{{ $homeURL }}" title="{{ .Site.Title }}">
+            <a href='{{ strings.TrimPrefix $.Site.BaseURL "/blog/" }}' title="{{ .Site.Title }}">
                 {{- with .Site.Params.header.title -}}
                     {{- with .logo -}}
                         {{- $src := (print $.Site.BaseURL .) -}}
