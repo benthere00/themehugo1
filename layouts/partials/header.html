@@ -3,7 +3,7 @@
     <div class="header-wrapper">
         <div class="header-title">
             {{ $homeurl := replace $.Site.BaseURL "^[^/]+://[^/]+/" $.Site.BaseURL }}
-            <a href='{{ $homeurl }}' title="{{ .Site.Title }}">
+            <a href="{{ $homeurl }}#/" title="{{ .Site.Title }}">
                 {{- with .Site.Params.header.title -}}
                     {{- with .logo -}}
                         {{- $src := (print $.Site.BaseURL .) -}}
