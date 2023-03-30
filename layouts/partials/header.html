@@ -2,7 +2,8 @@
 <header class="desktop" id="header-desktop">
     <div class="header-wrapper">
         <div class="header-title">
-            <a href="/" title="{{ .Site.Title }}">
+            {{ $homeurl := trimPrefix $.Site.BaseURL (findRE "^([^/]+://[^/]+/).*" "") }}
+            <a href="{{ $homeurl }}" title="{{ .Site.Title }}">
                 {{- with .Site.Params.header.title -}}
                     {{- with .logo -}}
                         {{- $src := (print $.Site.BaseURL .) -}}
