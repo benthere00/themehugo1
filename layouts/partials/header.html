@@ -3,7 +3,7 @@
     <div class="header-wrapper">
         <div class="header-title">
             {{ $homeurl := strings.TrimSuffix $.Site.BaseURL .Site.Home.RelPermalink }}
-            <a href="{{ $homeurl }}#/" title="{{ .Site.Title }}">
+            <a href="/" title="{{ .Site.Title }}">
                 {{- with .Site.Params.header.title -}}
                     {{- with .logo -}}
                         {{- $src := (print $.Site.BaseURL .) -}}
