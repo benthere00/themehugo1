@@ -29,8 +29,8 @@
         <div class="menu">
             <div class="menu-inner">
                 {{- range .Site.Menus.main -}}
-                    {{- /* $url := .RelPermalink | relLangURL */ -}}
-                    {{- $url := .URL -}}
+                    {{- /* $url := .URL | relLangURL */ -}}
+                    {{- $url := .RelPermalink | relLangURL -}}
                     {{- with .Page -}}
                         {{- $url = .RelPermalink -}}
                     {{- end -}}
