@@ -31,10 +31,10 @@
         <div class="menu">
             <div class="menu-inner">
                 {{- range .Site.Menus.main -}}
-                    {{- /* $url := .URL | relLangURL */ -}}
+                    {{- $url := .URL | relLangURL -}}
                     {{- /* $url := (print .URL $.Site.LanguagePrefix) */ -}}
                     {{- /* $url := (print $homeURL `/` $subPath $.Site.LanguagePrefix) */ -}}
-                    {{- $url := (print $homeURL $.RelPermalink) | absLangURL -}}
+                    {{- /* $url := (print $homeURL $.RelPermalink) | relLangURL */ -}}
                     {{- with .Page -}}
                         {{- $url = .RelPermalink -}}
                     {{- end -}}
