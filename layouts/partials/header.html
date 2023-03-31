@@ -30,11 +30,6 @@
             <div class="menu-inner">
                 {{- range .Site.Menus.main -}}
                     {{- /* $url := .URL | relLangURL */ -}}
-
-                    {{ /*  $url := urls.Parse ($tag | urlize) */ }}
-                    {{ /*  $path := $url.Path */ }}
-                    {{ /*  with $.Site.GetPage (printf "/tags/%s" $path) */ }}
-
                     {{- $url := URL -}}
                     {{- with .Page -}}
                         {{- $url = $.RelPermalink -}}
