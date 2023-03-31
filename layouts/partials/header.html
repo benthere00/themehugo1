@@ -29,11 +29,13 @@
         <div class="menu">
             <div class="menu-inner">
                 {{- range .Site.Menus.main -}}
-                    {{- $url := .URL | relLangURL -}}
+                    {{- $url := replace .URL $.Site.BaseURL "" | relLangURL -}}
                     {{- with .Page -}}
-                        {{- $url = .RelPermalink -}}
+                        {{- $url = printf "%s%s" $.Site.BaseURL .RelPermalink -}}
                     {{- end -}}
-           
+                    <a class="menu-item{{ if $.IsMenuCurrent `main` . | or ($.HasMenuCurrent `main` .) | or (eq $.RelPermalink $url) }} active{{ end }}" href="{{- $url -}}"{{ with .Title }} title="{{ . }}"{{ end }}{{ if (urls.Parse $url).Host }} rel="noopener noreffer" target="_blank"{{ end }}>
+                        {{- .Pre | safeHTML }} {{ .Name }} {{ .Post | safeHTML -}}
+                    </a>
                 {{- end -}}
                 {{- if .Site.Menus.main -}}
                     <span class="menu-item delimiter"></span>
