@@ -33,7 +33,8 @@
                 {{- range .Site.Menus.main -}}
                     {{- /* $url := .URL | relLangURL */ -}}
                     {{- /* $url := (print .URL $.Site.LanguagePrefix) */ -}}
-                    {{- $url := (print $homeURL `/` $subPath $.Site.LanguagePrefix) -}}
+                    {{- /* $url := (print $homeURL `/` $subPath $.Site.LanguagePrefix) */ -}}
+                    {{- $url := (print $homeURL `/` $subPath) | relLangURL -}}
                     {{- with .Page -}}
                         {{- $url = .RelPermalink -}}
                     {{- end -}}
