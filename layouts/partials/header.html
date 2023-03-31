@@ -31,7 +31,7 @@
                 {{- range .Site.Menus.main -}}
                     {{- /* $url := .URL | relLangURL */ -}}
                     {{- /* $url := (print .URL $.Site.LanguagePrefix) */ -}}
-                    {{- $url := .URL | relLangURL -}}
+                    {{- $url := print($.Site.BaseURL $.RelPermalink) -}}
                     {{- with .Page -}}
                         {{- $url = .RelPermalink -}}
                     {{- end -}}
