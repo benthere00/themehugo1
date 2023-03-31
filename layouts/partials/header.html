@@ -30,9 +30,10 @@
             <div class="menu-inner">
                 {{- range .Site.Menus.main -}}
                     {{- /* $url := .URL | relLangURL */ -}}
-                    {{- $url := (print $.Site.LanguagePrefix $.RelPermalink ) -}}
+                    {{- /* $url := (print $.Site.LanguagePrefix $.RelPermalink ) */ -}}
+                    {{- $url := $.RelPermalink  -}}
                     {{- with .Page -}}
-                        {{- $url = $.RelPermalink -}}
+                        {{- $url = .RelPermalink -}}
                     {{- end -}}
                     <a class="menu-item{{ if $.IsMenuCurrent `main` . | or ($.HasMenuCurrent `main` .) | or (eq $.RelPermalink $url) }} active{{ end }}" href="{{ $url }}"{{ with .Title }} title="{{ . }}"{{ end }}{{ if (urls.Parse $url).Host }} rel="noopener noreffer" target="_blank"{{ end }}>
                         {{- .Pre | safeHTML }} {{ .Name }} {{ .Post | safeHTML -}}
