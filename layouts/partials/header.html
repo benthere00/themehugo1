@@ -3,7 +3,6 @@
     <div class="header-wrapper">
         <div class="header-title">
             {{ $homeURL := replaceRE "(^[^/]+://[^/]+)(/.*)?" "$1" $.Site.BaseURL }}
-            {{ $subPath := replaceRE "(^[^/]+://[^/]+)(/.*)?" "$2" $.Site.BaseURL }}
             <a href="{{ $homeURL }}/" title="{{ .Site.Title }}">
                 {{- with .Site.Params.header.title -}}
                     {{- with .logo -}}
@@ -31,7 +30,9 @@
         <div class="menu">
             <div class="menu-inner">
                 {{- range .Site.Menus.main -}}
-                    {{- $url := .URL | relLangURL -}}
+                    {{ $subPath := replaceRE "(^[^/]+://[^/]+)(/.*)?" "$2" $.Site.BaseURL }}
+                    {{ $urlFix := replaceRE $subPath "" .URL }}
+                    {{- $url := $urlFix | relLangURL -}}
                     {{- /* $url := (print .URL $.Site.LanguagePrefix) */ -}}
                     {{- /* $url := (print $homeURL `/` $subPath $.Site.LanguagePrefix) */ -}}
                     {{- /* $url := (print $homeURL $.RelPermalink) | relLangURL */ -}}
