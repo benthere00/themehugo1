@@ -30,7 +30,7 @@
             <div class="menu-inner">
                 {{- range .Site.Menus.main -}}
                     {{- /* $url := .URL | relLangURL */ -}}
-                    {{- $url := (print .URL $.Site.LanguagePrefix) -}}
+                    {{- $url := (print $.Site.LanguagePrefix .URL) -}}
                     {{- with .Page -}}
                         {{- $url = $.RelPermalink -}}
                     {{- end -}}
