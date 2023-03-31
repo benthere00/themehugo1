@@ -9,8 +9,8 @@ header {
   }
 
   .logo {
-    min-height: 1.5em;
-    height: 1.5em;
+    min-height: 1.2em;
+    height: 1.2em;
     vertical-align: text-bottom;
   }
 
@@ -37,7 +37,7 @@ header {
 
 .header-title {
   font-family: var(--header-title-font-family);
-  font-weight: bold;
+  font-weight: 400;
   margin-right: .5rem;
   min-width: 10%;
   overflow: hidden;
