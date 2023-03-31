@@ -34,7 +34,7 @@
                     {{- /* $url := .URL | relLangURL */ -}}
                     {{- /* $url := (print .URL $.Site.LanguagePrefix) */ -}}
                     {{- /* $url := (print $homeURL `/` $subPath $.Site.LanguagePrefix) */ -}}
-                    {{- $url := (print $homeURL `/` $subPath) | relLangURL -}}
+                    {{- $url := (print $homeURL $.RelPermalink) | relLangURL -}}
                     {{- with .Page -}}
                         {{- $url = .RelPermalink -}}
                     {{- end -}}
