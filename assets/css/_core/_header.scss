@@ -152,6 +152,9 @@ header {
   position: fixed;
   height: var(--header-height);
   line-height: var(--header-height);
+  box-shadow: 0 3px 8px rgba(0,0,0,.05);
+  -webkit-box-shadow: 0 3px 8px rgba(0,0,0,.05);
+  -moz-box-shadow: 0 3px 8px rgba(0,0,0,.05);
 
   [data-header-desktop=normal] & {
     position: static;
@@ -162,6 +165,7 @@ header {
 
     .header-title {
       font-size: var(--header-title-font-size);
+      font-weight: 500;
     }
 
     .menu {
