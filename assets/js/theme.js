@@ -625,7 +625,7 @@ var Theme = /*#__PURE__*/function () {
             }
           }
 
-          if (activeTocIndex !== -1) {
+          if (activeTocIndex !== -1 && $tocLinkElements[activeTocIndex]) {
             $tocLinkElements[activeTocIndex].classList.add('active');
             var $parent = $tocLinkElements[activeTocIndex].parentElement;
 
