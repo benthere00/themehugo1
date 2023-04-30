@@ -119,7 +119,7 @@ $code-font-family: "Source Code Pro", Menlo, Monaco, Consolas, "Liberation Mono"
 $code-font-size: .875rem !default;
 
 // Color of the code
-$code-color: #7000ff !default;
+$code-color: #0097ff !default;
 $code-color-dark: #E5BF78 !default;
 
 // Color of the code background
@@ -187,13 +187,13 @@ $code-type-list:
 // Color map of the code highlight
 $code-highlight-color-map: (
   /* Parentheses */ "p": #a9a9b3,
-  /* Keyword */ "k": #b501a9,
-  /* KeywordConstant */ "kc": #b501a9,
-  /* KeywordDeclaration */ "kd": #b501a9,
-  /* KeywordNamespace */ "kn": #b501a9,
-  /* KeywordPseudo */ "kp": #b501a9,
-  /* KeywordReserved */ "kr": #b501a9,
-  /* KeywordType */ "kt": #b501a9,
+  /* Keyword */ "k": #fa65bc,
+  /* KeywordConstant */ "kc": #fa65bc,
+  /* KeywordDeclaration */ "kd": #fa65bc,
+  /* KeywordNamespace */ "kn": #fa65bc,
+  /* KeywordPseudo */ "kp": #fa65bc,
+  /* KeywordReserved */ "kr": #fa65bc,
+  /* KeywordType */ "kt": #fa65bc,
   /* Name */ "n": #333333,
   /* NameAttribute */ "na": #2b77fa,
   /* NameBuiltin */ "nb": #ff8200,
@@ -239,7 +239,7 @@ $code-highlight-color-map: (
   /* LiteralNumberIntegerLong */ "il": #e2893c,
   /* LiteralNumberOct */ "mo": #e2893c,
   /* Operator */ "o": #f19b04,
-  /* OperatorWord */ "ow": #b501a9,
+  /* OperatorWord */ "ow": #fa65bc,
   /* Comment */ "c": #a0a1a8,
   /* CommentHashbang */ "ch": #a0a1a8,
   /* CommentMultiline */ "cm": #a0a1a8,
