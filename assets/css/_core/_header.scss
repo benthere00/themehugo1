@@ -11,7 +11,7 @@ header {
   .logo {
     min-height: 1em;
     height: 1.5em;
-    vertical-align: baseline;
+    vertical-align: text-bottom;
   }
 
   .logo, .header-title-pre {
@@ -45,7 +45,7 @@ header {
 .menu .menu-item {
   position: relative;
   font-size: 0.8rem;
-  font-weight: 300;
+  font-weight: 500;
 }
 
 .language-select {
@@ -154,7 +154,7 @@ header {
   }
 
   .header-wrapper {
-    padding: 0 2rem 0 10vh;
+    padding: 0 2rem;
     border-bottom: 1px solid #f4f4f5;
 
     .header-title {

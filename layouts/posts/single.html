@@ -13,7 +13,7 @@
     {{- /* Auto TOC */ -}}
     {{- if ne $toc.enable false -}}
         <div class="toc" id="toc-auto">
-            <h2 class="toc-title">{{ T "contents" }}</h2>
+            <div class="toc-title">{{ T "contents" }}</div>
             <div class="toc-content{{ if eq $toc.auto false }} always-active{{ end }}" id="toc-content-auto"></div>
         </div>
     {{- end -}}
@@ -24,7 +24,7 @@
 
         {{- /* Subtitle */ -}}
         {{- with $params.subtitle -}}
-            <h2 class="single-subtitle">{{ . }}</h2>
+            <div class="single-subtitle">{{ . }}</div>
         {{- end -}}
 
         {{- /* Meta */ -}}
