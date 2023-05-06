@@ -157,14 +157,15 @@ header {
     padding: 0 2rem;
     border-bottom: 1px solid #f4f4f5;
 
+    [theme=dark] & {
+      border-bottom: 1px solid inherit;
+    }
+
     .header-title {
       font-size: var(--header-title-font-size);
       font-weight: 500;
     }
-
-    &:hover {
-      @include box-shadow(0 3px 8px rgb(255, 255, 255));
-    }
+    
     .menu {
       overflow: hidden;
       white-space: nowrap;
