@@ -4,10 +4,6 @@ header {
   background-color: $header-background-color;
   @include transition(box-shadow 0.3s ease);
 
-  [theme=dark] & {
-    background-color: $header-background-color-dark;
-  }
-
   .logo {
     min-height: 1em;
     height: 1.5em;
@@ -158,14 +154,15 @@ header {
     border-bottom: 1px solid #f4f4f5;
 
     [theme=dark] & {
-      border-bottom: 1px solid inherit;
+      background-color: $header-background-color-dark;
+      border-bottom: 1px solid #212121;
     }
 
     .header-title {
       font-size: var(--header-title-font-size);
       font-weight: 500;
     }
-    
+
     .menu {
       overflow: hidden;
       white-space: nowrap;
