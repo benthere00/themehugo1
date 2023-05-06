@@ -1,7 +1,6 @@
 header {
   width: 100%;
   z-index: 150;
-  background-color: $header-background-color;
   @include transition(box-shadow 0.3s ease);
 
   .logo {
@@ -150,12 +149,13 @@ header {
   }
 
   .header-wrapper {
+    background-color: $header-background-color;
     padding: 0 2rem;
     border-bottom: 1px solid #f4f4f5;
 
     [theme=dark] & {
       background-color: $header-background-color-dark;
-      border-bottom: 1px solid #212121;
+      border-bottom: 1px solid #3e3e3e;
     }
 
     .header-title {
