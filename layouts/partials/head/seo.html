@@ -78,7 +78,12 @@
         {{- if not $images -}}
             {{- $images = $params.featuredimage | default "" -}}
             {{- if not $images -}}
-
+                {{- with .Resources.GetMatch "featured-image-preview" -}}
+                    {{- $images = slice "featured-image-preview" -}}
+                {{- end -}}
+                {{- with .Resources.GetMatch "featured-image" -}}
+                    {{- $images = slice "featured-image" -}}
+                {{- end -}}
             {{- else -}}
                 {{- $images = slice (printf "%s%s" $.Site.BaseURL $images) -}}
             {{- end -}}
