@@ -69,7 +69,12 @@
             {{- $image = .RelPermalink -}}
         {{- end -}}
 
-
+        {{- /* Fixed for not bundled post */ -}}
+        {{- with index .Params.resources 0 -}}
+            {{- with .src -}}
+                {{- $image := . -}}
+            {{- end -}}
+        {{- end -}}
 
         <div class="log">This is: {{- $image -}}</div>
         {{- with $image -}}
