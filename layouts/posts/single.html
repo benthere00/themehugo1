@@ -75,7 +75,7 @@
             {{- end -}}
         {{- else -}}
             {{- with .Resources.GetMatch "*fseatured-image*" -}}
-                {{- $image: = .RelPermalink -}}
+                {{- $image := .RelPermalink -}}
             {{- end -}}
         {{- end -}}
 
