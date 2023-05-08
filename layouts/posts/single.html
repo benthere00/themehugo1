@@ -62,7 +62,7 @@
                 {{- end -}}
             </div>
         </div>
-        
+
         {{- /* $src := index .Params.resources 0 "src" */ -}}
         {{- /* Featured image */ -}}
         {{- $image := $params.featuredimage | default "" -}}
@@ -75,7 +75,6 @@
         {{- end -}}
         
         {{- /* printf "%#v" $image */ -}}
-        <div class="log">Ref: {{- $image -}}</div>
         {{- with $image -}}
             <div class="featured-image">
                 {{- dict "Src" . "Title" $.Description "Resources" $.Resources | partial "plugin/img.html" -}}
