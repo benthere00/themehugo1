@@ -5,6 +5,7 @@
     {{- $image := $params.featuredimage | default "" -}}
     {{- if ne $image "" -}}
         {{- $image := printf "%s%s" $.Site.Home.RelPermalink $image -}}
+        {{- printf "%#v" $image -}}
     {{- else -}}
         {{- $image := $params.featuredimagepreview -}}
         {{- with .Resources.GetMatch "featured-image" -}}
