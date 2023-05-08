@@ -73,9 +73,9 @@
             {{- with .src -}}
                 {{- /* $image = .RelPermalink */ -}}
                 {{- $imageResource := . -}}
-                {{- $image := $.Page.Resources.GetMatch $imageResource -}}
+                {{- $image := .Resources.GetMatch $imageResource -}}
                 {{- if $image -}}
-                    {{- $image = $image.RelPermalink -}}
+                    {{- $image = .RelPermalink -}}
                 {{- end -}}
             {{- end -}}
         {{- end -}}
