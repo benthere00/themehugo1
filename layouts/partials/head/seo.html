@@ -85,7 +85,7 @@
                     {{- $images = slice "featured-image" -}}
                 {{- end -}}
             {{- else -}}
-                {{- $images = slice (printf "%s%s" $.Site.Home.RelPermalink $images) -}}
+                {{- $images = slice (printf "%s%s" $.Site.BaseURL $images) -}}
             {{- end -}}
         {{- end -}}
         {{- with .Site.Params.seo.image -}}
