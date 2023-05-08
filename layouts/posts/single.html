@@ -63,6 +63,7 @@
             </div>
         </div>
         {{- $params := .Scratch.Get "params" -}}
+        {{- $src := index .Params.resources 0 "src" -}}
         {{- /* Featured image */ -}}
         {{- $image := $params.featuredimage -}}
      
@@ -72,7 +73,7 @@
         {{- end -}}
         {{- with $image -}}
             <div class="featured-image">
-                {{- $params.resources.[0].src -}}
+                {{- $src -}}
                 {{- dict "Src" . "Title" $.Description "Resources" $.Resources | partial "plugin/img.html" -}}
             </div>
         {{- end -}}
