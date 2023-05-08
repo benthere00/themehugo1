@@ -63,22 +63,15 @@
             </div>
         </div>
 
-        {{- $params := .Scratch.Get "params" -}}
         {{- /* Featured image */ -}}
-        {{- $image := "" -}}
-        {{- /* $image := $params.featuredimage */ -}}
-        {{- /*  with .Resources.GetMatch "featured-image" */ -}}
-        
-        {{- with index .Params.resources 0 -}}
-            {{- with .src -}}
-                {{- /* $image = .RelPermalink */ -}}
-                {{- $image :=  . -}}
-            {{- end -}}
+        {{- $image := $params.featuredimage -}}
+         {{- printf "%#v" $params.featuredimage -}}
+        {{- with .Resources.GetMatch "featured-image" -}}
+            {{- $image = .RelPermalink -}}
         {{- end -}}
-
+        <div class="log">Ref: {{- $image -}}</div>
         {{- with $image -}}
             <div class="featured-image">
-                {{- $image -}}
                 {{- dict "Src" . "Title" $.Description "Resources" $.Resources | partial "plugin/img.html" -}}
             </div>
         {{- end -}}
