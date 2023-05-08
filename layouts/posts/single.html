@@ -71,7 +71,7 @@
         {{- with index .Params.resources 0 -}}
             {{- with .src -}}
                 {{- /* $image = .RelPermalink */ -}}
-                {{- $image := .RelPermalink -}}
+                {{- $image := . -}}
             {{- end -}}
         {{- end -}}
 
