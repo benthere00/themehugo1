@@ -62,12 +62,18 @@
                 {{- end -}}
             </div>
         </div>
+        
         {{- /* $src := index .Params.resources 0 "src" */ -}}
         {{- /* Featured image */ -}}
-        {{- $image := $params.featuredimage | default ""  -}}
-        {{- with .Resources.GetMatch "featured-image" -}}
-            {{- $image := .RelPermalink -}}
+        {{- $image := $params.featuredimage | default "" -}}
+        {{- if ne $image "" -}}
+            {{- $image = printf "%s%s" $.Site.Home.RelPermalink $image -}}
+        {{- else -}}
+            {{- with .Resources.GetMatch "featured-image" -}}
+                {{- $image = .RelPermalink -}}
+            {{- end -}}
         {{- end -}}
+        
         {{- /* printf "%#v" $image */ -}}
         <div class="log">Ref: {{- $image -}}</div>
         {{- with $image -}}
