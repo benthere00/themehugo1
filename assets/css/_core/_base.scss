@@ -48,7 +48,7 @@ body {
   scrollbar-color: auto;
   text-rendering: optimizeLegibility!important;
   -webkit-font-smoothing: antialiased!important;
-
+  -moz-osx-font-smoothing: grayscale;
   &[theme=dark] {
     color: $global-font-color-dark;
     background-color: $global-background-color-dark;
