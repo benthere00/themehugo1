@@ -65,7 +65,7 @@
 
         {{- /* Featured image */ -}}
         {{- $image := $params.featuredimage -}}
-         {{- printf "%#v" $params.featuredimage -}}
+         {{- printf "%#v" .Resources -}}
         {{- with .Resources.GetMatch "*featured-image*" -}}
             {{- $image = .RelPermalink -}}
         {{- end -}}
