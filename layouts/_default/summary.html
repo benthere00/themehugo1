@@ -3,9 +3,8 @@
 <article class="single summary" itemscope itemtype="http://schema.org/Article">
     {{- /* Featured image */ -}}
     {{- $image := $params.featuredimage | default "" -}}
-    {{- if ne $image "" -}}
+    {{- if not $image -}}
         {{- $image = printf "%s%s" $.Site.Home.RelPermalink $image -}}
-        {{- printf "%#v" $image -}}
     {{- else -}}
         {{- $image = $params.featuredimagepreview -}}
         {{- with .Resources.GetMatch "featured-image" -}}

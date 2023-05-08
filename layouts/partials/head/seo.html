@@ -76,11 +76,16 @@
         },
         {{- $images := $params.seo.images | default slice -}}
         {{- if not $images -}}
-            {{- with .Resources.GetMatch "featured-image-preview" -}}
-                {{- $images = slice "featured-image-preview" -}}
-            {{- end -}}
-            {{- with .Resources.GetMatch "featured-image" -}}
-                {{- $images = slice "featured-image" -}}
+            {{- $images = $params.featuredimage | default "" -}}
+            {{- if not $images -}}
+                {{- $images = slice (printf "%s%s" $.Site.Home.RelPermalink $images) -}}
+            {{- else -}}
+                {{- with .Resources.GetMatch "featured-image-preview" -}}
+                    {{- $images = slice "featured-image-preview" -}}
+                {{- end -}}
+                {{- with .Resources.GetMatch "featured-image" -}}
+                    {{- $images = slice "featured-image" -}}
+                {{- end -}}
             {{- end -}}
         {{- end -}}
         {{- with .Site.Params.seo.image -}}
