@@ -65,16 +65,11 @@
 
         {{- /* Featured image */ -}}
         {{- $image := "" -}}
-        {{- /* $image := $params.featuredimage */ -}}
-        {{- /*  with .Resources.GetMatch "featured-image" */ -}}
-        
-        {{- with index .Params.resources 0 -}}
-            {{- with .src -}}
-                {{- /* $image = .RelPermalink */ -}}
-                {{- $image := .RelPermalink -}}
-            {{- end -}}
+        {{- $image := $params.featuredimage -}}
+        {{- with .Resources.GetMatch "featured-image" -}}
+            {{- $image = .RelPermalink -}}
         {{- end -}}
-
+    
         {{- with $image -}}
             <div class="featured-image">
                 {{- $image -}}
