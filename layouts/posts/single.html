@@ -63,7 +63,6 @@
             </div>
         </div>
 
-        {{- $params := .Scratch.Get "params" -}}
         {{- /* Featured image */ -}}
         {{- $image := "" -}}
         {{- /* $image := $params.featuredimage */ -}}
@@ -72,7 +71,7 @@
         {{- with index .Params.resources 0 -}}
             {{- with .src -}}
                 {{- /* $image = .RelPermalink */ -}}
-                {{- $image = relLangURL . -}}
+                {{- $image := .RelPermalink -}}
             {{- end -}}
         {{- end -}}
 
