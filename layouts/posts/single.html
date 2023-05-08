@@ -62,25 +62,26 @@
                 {{- end -}}
             </div>
         </div>
-        {{- /* printf "%#v" $params */ -}}
-         {{- /* Featured image */ -}}
-         {{- $image := "" -}}
-         {{- /* $image := $params.featuredimage */ -}}
-         {{- /*  with .Resources.GetMatch "featured-image" */ -}}
-         
-         {{- with index .Params.resources 0 -}}
-             {{- with .src -}}
-                 {{- /* $image = .RelPermalink */ -}}
-                 {{- $image :=  . -}}
-             {{- end -}}
-         {{- end -}}
- 
-         {{- with $image -}}
-             <div class="featured-image">
-                 {{- $image -}}
-                 {{- dict "Src" . "Title" $.Description "Resources" $.Resources | partial "plugin/img.html" -}}
-             </div>
-         {{- end -}}
+
+        {{- $params := .Scratch.Get "params" -}}
+        {{- /* Featured image */ -}}
+        {{- $image := "" -}}
+        {{- /* $image := $params.featuredimage */ -}}
+        {{- /*  with .Resources.GetMatch "featured-image" */ -}}
+        
+        {{- with index .Params.resources 0 -}}
+            {{- with .src -}}
+                {{- /* $image = .RelPermalink */ -}}
+                {{- $image :=  . -}}
+            {{- end -}}
+        {{- end -}}
+
+        {{- with $image -}}
+            <div class="featured-image">
+                {{- $image -}}
+                {{- dict "Src" . "Title" $.Description "Resources" $.Resources | partial "plugin/img.html" -}}
+            </div>
+        {{- end -}}
 
         {{- /* Static TOC */ -}}
         {{- if ne $toc.enable false -}}
