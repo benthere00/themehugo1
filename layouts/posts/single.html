@@ -62,11 +62,11 @@
                 {{- end -}}
             </div>
         </div>
-        {{- $src := index .Params.resources 0 "src" -}}
+        {{- /* $src := index .Params.resources 0 "src" */ -}}
         {{- /* Featured image */ -}}
         {{- $image := $params.featuredimage -}}
-         {{- printf "%#v" $src -}}
-        {{- with .Resources.GetMatch "*featured-image*" -}}
+         {{- printf "%#v" $image -}}
+        {{- with .Resources.GetMatch "featured-image" -}}
             {{- $image = .RelPermalink -}}
         {{- end -}}
         <div class="log">Ref: {{- $image -}}</div>
