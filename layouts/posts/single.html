@@ -68,7 +68,7 @@
         {{- with .Resources.GetMatch "*featured-image*" -}}
             {{- $image = .RelPermalink -}}
         {{- end -}}
-    
+        <div class="log">This is: {{- $image -}}</div>
         {{- with $image -}}
             <div class="featured-image">
                 {{- $image -}}
