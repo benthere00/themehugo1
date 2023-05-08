@@ -2,12 +2,17 @@
 
 <article class="single summary" itemscope itemtype="http://schema.org/Article">
     {{- /* Featured image */ -}}
-    {{- $image := $params.featuredimagepreview | default $params.featuredimage -}}
-    {{- with .Resources.GetMatch "featured-image" -}}
-        {{- $image = .RelPermalink -}}
-    {{- end -}}
-    {{- with .Resources.GetMatch "featured-image-preview" -}}
-        {{- $image = .RelPermalink -}}
+    {{- $image := $params.featuredimage | default "" -}}
+    {{- if ne $image "" -}}
+        {{- $image := printf "%s%s" $.Site.Home.RelPermalink $image -}}
+    {{- else -}}
+        {{- $image := $params.featuredimagepreview -}}
+        {{- with .Resources.GetMatch "featured-image" -}}
+            {{- $image := .RelPermalink -}}
+        {{- end -}}
+        {{- with .Resources.GetMatch "featured-image-preview" -}}
+            {{- $image := .RelPermalink -}}
+        {{- end -}}
     {{- end -}}
     {{- with $image -}}
         <div class="featured-image-preview">
