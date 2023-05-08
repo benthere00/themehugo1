@@ -66,15 +66,16 @@
         {{- /* Featured image */ -}}
         {{- $image := $params.featuredimage -}}
         {{- if not $image -}}
-            {{- /* Fixed for not bundled post */ -}}
+            {{- $image = "nil.png" -}}
+            {{- /* Fixes for not bundled post */ -}}
             {{- with index .Params.resources 0 -}}
                 {{- with .src -}}
                     {{- $image := . -}}
                 {{- end -}}
             {{- end -}}
         {{- else -}}
-            {{- with .Resources.GetMatch "*featured-image*" -}}
-                {{- $image = .RelPermalink -}}
+            {{- with .Resources.GetMatch "*fseatured-image*" -}}
+                {{- $image: = .RelPermalink -}}
             {{- end -}}
         {{- end -}}
 
