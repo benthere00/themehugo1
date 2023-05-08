@@ -64,7 +64,6 @@
         </div>
 
         {{- /* Featured image */ -}}
-        {{- $image := "" -}}
         {{- $image := $params.featuredimage -}}
         {{- with .Resources.GetMatch "featured-image" -}}
             {{- $image = .RelPermalink -}}
