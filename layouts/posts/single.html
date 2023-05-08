@@ -65,21 +65,22 @@
 
         {{- /* Featured image */ -}}
         {{- $image := $params.featuredimage -}}
-        {{- with .Resources.GetMatch "*featured-image*" -}}
-            {{- $image = .RelPermalink -}}
-        {{- end -}}
-
-        {{- /* Fixed for not bundled post */ -}}
-        {{- with index .Params.resources 0 -}}
-            {{- with .src -}}
-                {{- $image := . -}}
+        {{- if not $image -}}
+            {{- /* Fixed for not bundled post */ -}}
+            {{- with index .Params.resources 0 -}}
+                {{- with .src -}}
+                    {{- $image := . -}}
+                {{- end -}}
+            {{- end -}}
+        {{- else -}}
+            {{- with .Resources.GetMatch "*featured-image*" -}}
+                {{- $image = .RelPermalink -}}
             {{- end -}}
         {{- end -}}
 
         <div class="log">This is: {{- $image -}}</div>
         {{- with $image -}}
             <div class="featured-image">
-                {{- $image -}}
                 {{- dict "Src" . "Title" $.Description "Resources" $.Resources | partial "plugin/img.html" -}}
             </div>
         {{- end -}}
