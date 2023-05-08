@@ -64,17 +64,13 @@
         </div>
 
         {{- /* Featured image */ -}}
-        {{- $image := $params.featuredimage -}}
-        {{- if not $image -}}
-            {{- $image = "nil.png" -}}
-            {{- /* Fixes for not bundled post */ -}}
-            {{- with index .Params.resources 0 -}}
-                {{- with .src -}}
-                    {{- $image := . -}}
-                {{- end -}}
-            {{- end -}}
-        {{- else -}}
-            {{- with .Resources.GetMatch "*fseatured-image*" -}}
+        {{- $image := "" -}}
+        {{- /* $image := $params.featuredimage */ -}}
+        {{- /*  with .Resources.GetMatch "featured-image" */ -}}
+        
+        {{- with index .Params.resources 0 -}}
+            {{- with .src -}}
+                {{- /* $image = .RelPermalink */ -}}
                 {{- $image := .RelPermalink -}}
             {{- end -}}
         {{- end -}}
