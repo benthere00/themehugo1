@@ -63,24 +63,24 @@
             </div>
         </div>
 
-        {{- /* Featured image */ -}}
-        {{- $image := "" -}}
-        {{- /* $image := $params.featuredimage */ -}}
-        {{- /*  with .Resources.GetMatch "featured-image" */ -}}
-        
-        {{- with index .Params.resources 0 -}}
-            {{- with .src -}}
-                {{- /* $image = .RelPermalink */ -}}
-                {{- $image := . -}}
-            {{- end -}}
-        {{- end -}}
-
-        <div class="log">This is: {{- $image -}}</div>
-        {{- with $image -}}
-            <div class="featured-image">
-                {{- dict "Src" . "Title" $.Description "Resources" $.Resources | partial "plugin/img.html" -}}
-            </div>
-        {{- end -}}
+         {{- /* Featured image */ -}}
+         {{- $image := "" -}}
+         {{- /* $image := $params.featuredimage */ -}}
+         {{- /*  with .Resources.GetMatch "featured-image" */ -}}
+         
+         {{- with index .Params.resources 0 -}}
+             {{- with .src -}}
+                 {{- /* $image = .RelPermalink */ -}}
+                 {{- $image :=  . -}}
+             {{- end -}}
+         {{- end -}}
+ 
+         {{- with $image -}}
+             <div class="featured-image">
+                 {{- $image -}}
+                 {{- dict "Src" . "Title" $.Description "Resources" $.Resources | partial "plugin/img.html" -}}
+             </div>
+         {{- end -}}
 
         {{- /* Static TOC */ -}}
         {{- if ne $toc.enable false -}}
