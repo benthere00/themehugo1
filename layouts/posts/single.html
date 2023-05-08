@@ -72,11 +72,7 @@
         {{- with index .Params.resources 0 -}}
             {{- with .src -}}
                 {{- /* $image = .RelPermalink */ -}}
-                {{- $imageResource := . -}}
-                {{- $image := .Resources.GetMatch $imageResource -}}
-                {{- if $image -}}
-                    {{- $image = .RelPermalink -}}
-                {{- end -}}
+                {{- $image = relLangURL . -}}
             {{- end -}}
         {{- end -}}
 
