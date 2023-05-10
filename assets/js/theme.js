@@ -589,7 +589,7 @@ var Theme = /*#__PURE__*/function () {
         var minScrollTop = minTocTop - TOP_SPACING + (headerIsFixed ? 0 : headerHeight);
 
         this._tocOnScroll = this._tocOnScroll || function () {
-          var footerTop = document.getElementById('post-footer').offsetTop;
+          var footerTop = document.getElementById('post-footer').offsetTop || 1260;
           var maxTocTop = footerTop - $toc.getBoundingClientRect().height;
           var maxScrollTop = maxTocTop - TOP_SPACING + (headerIsFixed ? 0 : headerHeight);
 
