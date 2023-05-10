@@ -590,7 +590,7 @@ var Theme = /*#__PURE__*/function () {
 
         this._tocOnScroll = this._tocOnScroll || function () {
           var postFooter = document.getElementById('post-footer');
-          var footerTop = (postFooter !== null) ? postFooter.offsetTop : 1260;
+          var footerTop = (postFooter !== null) ? postFooter.offsetTop : 1480;
           // var footerTop = document.getElementById('post-footer').offsetTop || 1260;
           var maxTocTop = footerTop - $toc.getBoundingClientRect().height;
           var maxScrollTop = maxTocTop - TOP_SPACING + (headerIsFixed ? 0 : headerHeight);
