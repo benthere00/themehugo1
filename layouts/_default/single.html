@@ -18,69 +18,21 @@
         </div>
     {{- end -}}
 
-    <article class="page single">
+    <div class="page single special">
         {{- /* Title */ -}}
-        <h1 class="single-title animate__animated animate__flipInX">{{ .Title | emojify }}</h1>
+        <h1 class="single-title animate__animated animate__pulse animate__faster">
+            {{- .Title -}}
+        </h1>
 
         {{- /* Subtitle */ -}}
         {{- with $params.subtitle -}}
             <div class="single-subtitle">{{ . }}</div>
         {{- end -}}
 
-        {{- /* Meta */ -}}
-        <div class="post-meta">
-            <div class="post-meta-line">
-                {{- $author := $params.author | default .Site.Author.name | default (T "author") -}}
-                {{- $authorLink := $params.authorlink | default .Site.Author.link | default .Site.Home.RelPermalink -}}
-                <span class="post-author">
-                    {{- $options := dict "Class" "author" "Destination" $authorLink "Title" "Author" "Rel" "author" "Icon" (dict "Class" "fas fa-user-circle fa-fw") "Content" $author -}}
-                    {{- partial "plugin/a.html" $options -}}
-                </span>
-
-                {{- $categories := slice -}}
-                {{- range .Params.categories -}}
-                    {{- $category := partialCached "function/path.html" . . | printf "/categories/%v" | $.Site.GetPage -}}
-                    {{- $categories = $categories | append (printf `<a href="%v"><i class="far fa-folder fa-fw" aria-hidden="true"></i>%v</a>` $category.RelPermalink $category.Title) -}}
-                {{- end -}}
-                {{- with delimit $categories "&nbsp;" -}}
-                    &nbsp;<span class="post-category">
-                        {{- dict "Categories" . | T "includedInCategories" | safeHTML -}}
-                    </span>
-                {{- end -}}
-            </div>
-            <div class="post-meta-line">
-                {{- with .Site.Params.dateformat | default "2006-01-02" | .PublishDate.Format -}}
-                    <i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="{{ . }}">{{ . }}</time>&nbsp;
-                {{- end -}}
-                <i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;{{ T "wordCount" .WordCount }}&nbsp;
-                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;{{ T "readingTime" .ReadingTime }}&nbsp;
-                {{- $comment := .Scratch.Get "comment" | default dict -}}
-                {{- if $comment.enable | and $comment.valine.enable | and $comment.valine.visitor -}}
-                    <span id="{{ .RelPermalink }}" class="leancloud_visitors" data-flag-title="{{ .Title }}">
-                        <i class="far fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;{{ T "views" }}
-                    </span>&nbsp;
-                {{- end -}}
-            </div>
+        {{- /* Content */ -}}
+        <div class="content" id="content">
+            {{- dict "Content" .Content "Ruby" $params.ruby "Fraction" $params.fraction "Fontawesome" $params.fontawesome | partial "function/content.html" | safeHTML -}}
         </div>
-
-        {{- /* $src := index .Params.resources 0 "src" */ -}}
-        {{- /* Featured image */ -}}
-        {{- $image := $params.featuredimage | default "" -}}
-        {{- if ne $image "" -}}
-            {{- $image = printf "%s%s" $.Site.BaseURL $image -}}
-        {{- else -}}
-            {{- with .Resources.GetMatch "featured-image" -}}
-                {{- $image = .RelPermalink -}}
-            {{- end -}}
-        {{- end -}}
-        
-        {{- /* printf "%#v" $image */ -}}
-        {{- with $image -}}
-            <div class="featured-image">
-                {{- dict "Src" . "Title" $.Description "Resources" $.Resources | partial "plugin/img.html" -}}
-            </div>
-        {{- end -}}
-
         {{- /* Static TOC */ -}}
         {{- if ne $toc.enable false -}}
             <div class="details toc" id="toc-static"  data-kept="{{ if $toc.keepStatic }}true{{ end }}">
@@ -93,16 +45,7 @@
                 </div>
             </div>
         {{- end -}}
-
-        {{- /* Content */ -}}
-        <div class="content" id="content">
-            {{- dict "Content" .Content "Ruby" $params.ruby "Fraction" $params.fraction "Fontawesome" $params.fontawesome | partial "function/content.html" | safeHTML -}}
-        </div>
-
-        {{- /* Footer */ -}}
-        {{- partial "single/footer.html" . -}}
-
         {{- /* Comment */ -}}
-        {{- partial "comment.html" . -}}
-    </article>
+        {{- /* partial "comment.html" . */ -}}
+    </div>
 {{- end -}}
