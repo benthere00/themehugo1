@@ -2,6 +2,22 @@
 
 {{- define "content" -}}
     {{- $params := .Scratch.Get "params" -}}
+
+    {{- $toc := $params.toc -}}
+    {{- if eq $toc true -}}
+        {{- $toc = .Site.Params.page.toc | default dict -}}
+    {{- else if eq $toc false -}}
+        {{- $toc = dict "enable" false -}}
+    {{- end -}}
+
+    {{- /* Auto TOC */ -}}
+    {{- if ne $toc.enable false -}}
+        <div class="toc" id="toc-auto">
+            <div class="toc-title">{{ T "contents" }}</div>
+            <div class="toc-content{{ if eq $toc.auto false }} always-active{{ end }}" id="toc-content-auto"></div>
+        </div>
+    {{- end -}}
+
     <div class="page single special">
         {{- /* Title */ -}}
         <h1 class="single-title animate__animated animate__pulse animate__faster">
