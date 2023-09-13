@@ -18,3 +18,8 @@ $RECYCLE.BIN/
 
 # Linux
 .directory
+
+# Usually sensitive
+*.env
+.env
+._*
