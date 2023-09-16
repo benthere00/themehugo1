@@ -1,5 +1,12 @@
-<svg xmlns="http://www.w3.org/2000/svg" style="margin:auto;background:0 0" width="60" height="60" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid" display="block">
-    <circle cx="50" cy="50" r="20" stroke-width="4" stroke="#a5a5a5" stroke-dasharray="31.416 31.416" fill="none" stroke-linecap="round" transform="rotate(67.21 50 50)">
-        <animateTransform attributeName="transform" type="rotate" repeatCount="indefinite" dur="1s" keyTimes="0;1" values="0 50 50;360 50 50"/>
-    </circle>
+<svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .spinner_b2T7 { animation: spinner_xe7Q .8s linear infinite }
+    .spinner_YRVV { animation-delay: -.65s }
+    .spinner_c9oY { animation-delay: -.5s }
+    @keyframes spinner_xe7Q { 93.75%, 100% { r: 3px } 46.875% { r: .2px } }
+    circle { fill: #CCCCCC; }
+  </style>
+  <circle class="spinner_b2T7" cx="4" cy="12" r="3"/>
+  <circle class="spinner_b2T7 spinner_YRVV" cx="12" cy="12" r="3"/>
+  <circle class="spinner_b2T7 spinner_c9oY" cx="20" cy="12" r="3"/>
 </svg>
