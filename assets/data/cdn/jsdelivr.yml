@@ -29,7 +29,7 @@ libFiles:
   # sharer.js@0.5.1 https://github.com/ellisonleao/sharer.js
   sharerJS: sharer.js@0.5.1/sharer.min.js
   # typeit@8.6.0 https://github.com/alexmacarthur/typeit
-  typeitJS: typeit@8.6.0/dist/index.umd.js
+  typeitJS: typeit@8.7.1/dist/index.umd.min.js
   # katex@0.16.0 https://katex.org/
   katexCSS: katex@0.16.0/dist/katex.min.css
   katexJS: katex@0.16.0/dist/katex.min.js
