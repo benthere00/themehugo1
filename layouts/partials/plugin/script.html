@@ -4,6 +4,12 @@
     {{- if strings.HasPrefix .Source "<script" -}}
         {{- safeHTML .Source -}}
     {{- else -}}
+        {{- if .Async -}}
+            {{- $attrs = " async" | add $attrs -}}
+        {{- end -}}
+        {{- if .Defer -}}
+            {{- $attrs = " defer" | add $attrs -}}
+        {{- end -}}
         {{- $src := .Source -}}
         {{- $integrity := .Integrity -}}
         {{- if (urls.Parse $src).Host | not -}}
@@ -26,12 +32,6 @@
         {{- end -}}
         {{- with $integrity -}}
             {{- $attrs = printf ` integrity="%v"` . | add $attrs -}}
-        {{- end -}}
-        {{- if .Async -}}
-            {{- $attrs = " async" | add $attrs -}}
-        {{- end -}}
-        {{- if .Defer -}}
-            {{- $attrs = " defer" | add $attrs -}}
         {{- end -}}
         {{- with .Attr -}}
             {{- $attrs = add " " . | add $attrs -}}
