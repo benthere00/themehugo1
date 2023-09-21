@@ -10,14 +10,7 @@
         {{- partial "head/meta.html" . -}}
         {{- partial "head/link.html" . -}}
         {{- partial "head/seo.html" . -}}
-        {{- $cdnDataStr := .Scratch.Get "cdnData" -}}
-        {{- if eq $cdnDataStr "cdnjs.yml" -}}
-            <link rel="dns-prefetch" href="//cdnjs.cloudflare.com" />
-        {{- end -}}
-        {{- if eq $cdnDataStr "jsdelivr.yml" -}}
-            <link rel="dns-prefetch" href="//cdn.jsdelivr.net" />
-        {{- end -}}
-
+        {{- partial "head/scripts.html" . -}}
     </head>
     <body data-header-desktop="{{ .Site.Params.header.desktopMode }}" data-header-mobile="{{ .Site.Params.header.mobileMode }}">
         {{- /* Check theme isDark before body rendering */ -}}

@@ -49,3 +49,12 @@
 {{- $source := $cdn.animateCSS | default "lib/animate/animate.min.css" -}}
 {{- $options := dict "Source" $source "Fingerprint" $fingerprint "Preload" true -}}
 {{- partial "plugin/style.html" $options -}}
+
+{{- /* Prefetch CDN */ -}}
+{{- $cdnDataStr := .Scratch.Get "cdnData" -}}
+{{- if eq $cdnDataStr "cdnjs.yml" -}}
+    <link rel="dns-prefetch" href="//cdnjs.cloudflare.com" />
+{{- end -}}
+{{- if eq $cdnDataStr "jsdelivr.yml" -}}
+    <link rel="dns-prefetch" href="//cdn.jsdelivr.net" />
+{{- end -}}
