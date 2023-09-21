@@ -10,7 +10,8 @@
         {{- partial "head/meta.html" . -}}
         {{- partial "head/link.html" . -}}
         {{- partial "head/seo.html" . -}}
-        <script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js async>
+        {{- /* partial "head/scripts.html" . */ -}}
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js" async=""></script>
     </head>
     <body data-header-desktop="{{ .Site.Params.header.desktopMode }}" data-header-mobile="{{ .Site.Params.header.mobileMode }}">
         {{- /* Check theme isDark before body rendering */ -}}
