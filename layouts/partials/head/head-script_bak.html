@@ -1,0 +1,10 @@
+{{- $cdn := .Scratch.Get "cdn" | default dict -}}
+{{- $fingerprint := .Scratch.Get "fingerprint" -}}
+
+{{- /* lazysizes */ -}}
+{{- $source := $cdn.lazysizesJS | default "lib/lazysizes/lazysizes.min.js" -}}
+{{- dict "Source" $source "Fingerprint" $fingerprint "Async" true | dict "Scratch" .Scratch "Data" | partial "scratch/script.html" -}}
+
+{{- range (.Scratch.Get "this").script -}}
+    {{- partial "plugin/script.html" . -}}
+{{- end -}}
