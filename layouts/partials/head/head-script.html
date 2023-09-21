@@ -3,5 +3,5 @@
 
 {{- /* lazysizes */ -}}
 {{- $source := $cdn.lazysizesJS | default "lib/lazysizes/lazysizes.min.js" -}}
-{{- $options := dict "Source" $source "Fingerprint" $fingerprint "Defer" true -}}
+{{- $options := dict "Source" $source "Fingerprint" $fingerprint "Async" true -}}
 {{- partial "plugin/script.html" $options -}}
