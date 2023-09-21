@@ -11,6 +11,12 @@
         {{- partial "head/link.html" . -}}
         {{- partial "head/seo.html" . -}}
         {{- partial "head/head-script.html" . -}}
+        {{- /* CSS and JS inserts */ -}}
+        {{- if ne .Site.Params.head.enable false -}}
+            {{- with .Site.Params.head.insert -}}
+                {{- safeHTML . -}}
+            {{- end -}}
+        {{- end -}}
     </head>
     <body data-header-desktop="{{ .Site.Params.header.desktopMode }}" data-header-mobile="{{ .Site.Params.header.mobileMode }}">
         {{- /* Check theme isDark before body rendering */ -}}
