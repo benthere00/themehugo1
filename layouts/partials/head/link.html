@@ -1,5 +1,6 @@
 {{- $cdn := .Scratch.Get "cdn" | default dict -}}
 {{- $fingerprint := .Scratch.Get "fingerprint" -}}
+{{- $params := .Scratch.Get "params" -}}
 
 {{- if not .Site.Params.app.noFavicon -}}
     {{- with .Site.Params.app.svgFavicon -}}
@@ -45,7 +46,7 @@
 {{- partial "plugin/style.html" $options -}}
 
 {{- /* Google Fonts */ -}}
-{{- $source := "https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap" | default "https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap" -}}
+{{- $source := $params.fontFamily | default .Site.Params.fontFamily -}}
 {{- $options := dict "Source" $source "Preload" true -}}
 {{- partial "plugin/style.html" $options -}}
 
