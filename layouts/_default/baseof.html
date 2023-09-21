@@ -10,13 +10,8 @@
         {{- partial "head/meta.html" . -}}
         {{- partial "head/link.html" . -}}
         {{- partial "head/seo.html" . -}}
-     
-        {{- $cdn := .Scratch.Get "cdn" | default dict -}}
-{{- $fingerprint := .Scratch.Get "fingerprint" -}}
-
-{{- /* lazysizes */ -}}
-{{- $source := $cdn.lazysizesJS | default "lib/lazysizes/lazysizes.min.js" -}}
-{{- dict "Source" $source "Fingerprint" $fingerprint "Async" true | dict "Scratch" .Scratch "Data" | partial "scratch/script.html" -}}
+        {{- partial "head/scripts.html" . -}}
+        <script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.1/autocomplete.min.js async></script>
     </head>
     <body data-header-desktop="{{ .Site.Params.header.desktopMode }}" data-header-mobile="{{ .Site.Params.header.mobileMode }}">
         {{- /* Check theme isDark before body rendering */ -}}
