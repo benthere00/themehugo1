@@ -213,6 +213,7 @@ header {
 }
 
 #header-mobile {
+  background-color: $global-background-color;
   display: none;
   position: fixed;
   height: var(--header-height);

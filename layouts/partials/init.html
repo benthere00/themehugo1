@@ -4,6 +4,7 @@
 
 {{- if eq hugo.Environment "production" -}}
     {{- $cdn := .Site.Params.cdn -}}
+    {{- $cdnDataStr := .Site.Params.cdn.data -}}
     {{- with $cdn.data -}}
         {{- $cdnData := printf "data/cdn/%v" . | resources.Get | transform.Unmarshal -}}
         {{- $cdn = dict "simpleIconsPrefix" $cdnData.prefix.simpleIcons -}}
@@ -13,6 +14,7 @@
         {{- end -}}
     {{- end -}}
     {{- .Scratch.Set "cdn" $cdn -}}
+    {{- .Scratch.Set "cdnData" $cdnDataStr -}}
     {{- .Scratch.Set "fingerprint" .Site.Params.fingerprint -}}
     {{- .Scratch.Set "analytics" .Site.Params.analytics -}}
     {{- .Scratch.Set "comment" $params.comment -}}
