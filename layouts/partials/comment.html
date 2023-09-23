@@ -62,7 +62,7 @@
         {{- if $facebook.enable -}}
             <div id="fb-root" class="comment"></div>
             {{- $source := printf "https://connect.facebook.net/%v/sdk.js#xfbml=1&version=v18.0&appId=%v&autoLogAppEvents=1" ($facebook.languageCode | default (T "facebookLanguageCode")) $facebook.appId -}}
-            {{- dict "Source" $source "Defer" true  "Crossorigin" true | dict "Scratch" .Scratch "Data" | partial "scratch/script.html" -}}
+            {{- dict "Source" $source "Async" true "Defer" true "Crossorigin" true | dict "Scratch" .Scratch "Data" | partial "scratch/script.html" -}}
             <div
                 class="fb-comments"
                 data-href="{{ .Permalink }}"
