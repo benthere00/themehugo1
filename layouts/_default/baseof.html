@@ -50,7 +50,6 @@
 
         {{- /* Load JavaScript scripts and CSS */ -}}
         {{- partial "assets.html" . -}}
-        {{- $options := dict "Defer" true -}}
-        {{- partial "plugin/analytics.html" $options -}}
+        {{- partial "plugin/analytics.html" . -}}
     </body>
 </html>
