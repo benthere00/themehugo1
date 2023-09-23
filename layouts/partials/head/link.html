@@ -42,7 +42,7 @@
 {{- /* style.min.css */ -}}
 {{- $options := dict "Source" "css/style.scss" "Fingerprint" $fingerprint -}}
 {{- $toCSS := dict "targetPath" "css/style.min.css" "enableSourceMap" true -}}
-{{- $options = dict "Context" . "ToCSS" $toCSS "Preload" true | merge $options -}}
+{{- $options = dict "Context" . "ToCSS" $toCSS | merge $options -}}
 {{- partial "plugin/style.html" $options -}}
 
 {{- /* Google Fonts */ -}}
