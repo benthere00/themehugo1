@@ -3,7 +3,7 @@
 {{- if $analytics.enable -}}
     {{- /* Google Analytics */ -}}
     {{- with $analytics.google.id -}}
-        {{- printf "https://www.googletagmanager.com/gtag/js?id=%v" . | dict "Defer" true "Source" | partial "plugin/script.html" -}}
+        {{- printf "https://www.googletagmanager.com/gtag/js?id=%v" . | dict "Source" | partial "plugin/script.html" -}}
         <script type="text/javascript">
             window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
             gtag('config', '{{ . }}'{{ if $analytics.google.anonymizeIP }}, { 'anonymize_ip': true }{{ end }});
@@ -22,7 +22,7 @@
 
     {{- /* Plausible Analytics */ -}}
     {{- with $analytics.plausible.dataDomain -}}
-        {{- dict "Source" "https://plausible.io/js/plausible.js" "Async" true "Defer" true "Attr" ($analytics.plausible.dataDomain | printf `data-domain="%v"`) | partial "plugin/script.html" -}}
+        {{- dict "Source" "https://plausible.io/js/plausible.js" "Async" true "Attr" ($analytics.plausible.dataDomain | printf `data-domain="%v"`) | partial "plugin/script.html" -}}
     {{- end -}}
 
     {{- /* Yandex Metrica */ -}}
