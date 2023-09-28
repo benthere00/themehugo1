@@ -23,7 +23,7 @@ $global-background-color-dark: #292a2d !default;
 
 // Color of the text
 $global-font-color: #2f2f2f !default;
-$global-font-color-dark: #a9a9b3 !default;
+$global-font-color-dark: #853f29 !default;
 
 // Color of the secondary text
 $global-font-secondary-color: #444444 !default;
@@ -47,7 +47,7 @@ $global-border-color-dark: #363636 !default;
 $scrollbar-color: #cdcdcd !default;
 
 // Color of the hover scrollbar
-$scrollbar-hover-color: #a9a9b3 !default;
+$scrollbar-hover-color: #853f29 !default;
 // ========== Scrollbar ========== //
 
 // ========== Selection ========== //
@@ -186,7 +186,7 @@ $code-type-list:
 
 // Color map of the code highlight
 $code-highlight-color-map: (
-  /* Parentheses */ "p": #a9a9b3,
+  /* Parentheses */ "p": #853f29,
   /* Keyword */ "k": #0b0093,
   /* KeywordConstant */ "kc": #0b0093,
   /* KeywordDeclaration */ "kd": #0b0093,
@@ -196,8 +196,8 @@ $code-highlight-color-map: (
   /* KeywordType */ "kt": #0b0093,
   /* Name */ "n": #1b10a9,
   /* NameAttribute */ "na": #0a4ec3,
-  /* NameBuiltin */ "nb": #ff8200,
-  /* NameBuiltinPseudo */ "bp": #ff8200,
+  /* NameBuiltin */ "nb": #7d1818,
+  /* NameBuiltinPseudo */ "bp": #7d1818,
   /* NameClass */ "nc": #91381c,
   /* NameConstant */ "no": #0a4ec3,
   /* NameDecorator */ "nd": #0086c1,
@@ -261,7 +261,7 @@ $code-highlight-color-map: (
   /* TextWhitespace */ "w": #bbbbbb,
 ) !default;
 $code-highlight-color-map-dark: (
-  /* Parentheses */ "p": #a9a9b3,
+  /* Parentheses */ "p": #853f29,
   /* Keyword */ "k": #91C3F3,
   /* KeywordConstant */ "kc": #91C3F3,
   /* KeywordDeclaration */ "kd": #91C3F3,
@@ -282,7 +282,7 @@ $code-highlight-color-map-dark: (
   /* NameFunctionMagic */ "fm": #19b9c4,
   /* NameLabel */ "nl": #59a8d9,
   /* NameNamespace */ "nn": #59a8d9,
-  /* NameOther */ "nx": #a9a9b3,
+  /* NameOther */ "nx": #853f29,
   /* NameProperty */ "py": #59a8d9,
   /* NameTag */ "nt": #59a8d9,
   /* NameVariable */ "nv": #59a8d9,
