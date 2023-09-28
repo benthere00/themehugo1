@@ -543,9 +543,8 @@ var Theme = /*#__PURE__*/function () {
     value: function initHeaderLink() {
       for (var num = 1; num <= 6; num++) {
         this.util.forEach(document.querySelectorAll('.single .content > h' + num), function ($header) {
-          console.log($header);
           $header.classList.add('headerLink');
-          $header.insertAdjacentHTML('afterbegin', "<a href='#" + $header.id + "' class='header-mark'>" + $header.title + "</a>");
+          $header.insertAdjacentHTML('afterbegin', "<a href=\"#".concat($header.id, "\" class=\"header-mark\"></a>"));
         });
       }
     }

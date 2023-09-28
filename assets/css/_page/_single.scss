@@ -106,8 +106,8 @@
     > h5,
     > h6 {
       > .header-mark::before {
-        content: "|";
-        margin-right: .3125rem;
+        content: "";
+        margin-right: 0;
         color: $single-link-color;
 
         [theme=dark] & {
@@ -117,7 +117,8 @@
     }
 
     > h2 > .header-mark::before {
-      content: "|";
+      content: "";
+      margin-right: 0;
     }
 
     p {
