@@ -47,7 +47,7 @@ $global-border-color-dark: #363636 !default;
 $scrollbar-color: #cdcdcd !default;
 
 // Color of the hover scrollbar
-$scrollbar-hover-color: #853f29 !default;
+$scrollbar-hover-color: #ff7449 !default;
 // ========== Scrollbar ========== //
 
 // ========== Selection ========== //
@@ -186,7 +186,7 @@ $code-type-list:
 
 // Color map of the code highlight
 $code-highlight-color-map: (
-  /* Parentheses */ "p": #853f29,
+  /* Parentheses */ "p": #ff7449,
   /* Keyword */ "k": #0b0093,
   /* KeywordConstant */ "kc": #0b0093,
   /* KeywordDeclaration */ "kd": #0b0093,
@@ -261,7 +261,7 @@ $code-highlight-color-map: (
   /* TextWhitespace */ "w": #bbbbbb,
 ) !default;
 $code-highlight-color-map-dark: (
-  /* Parentheses */ "p": #853f29,
+  /* Parentheses */ "p": #54abed,
   /* Keyword */ "k": #91C3F3,
   /* KeywordConstant */ "kc": #91C3F3,
   /* KeywordDeclaration */ "kd": #91C3F3,
@@ -272,17 +272,17 @@ $code-highlight-color-map-dark: (
   /* Name */ "n": #a9b2c0,
   /* NameAttribute */ "na": #59a8d9,
   /* NameBuiltin */ "nb": #19b9c4,
-  /* NameBuiltinPseudo */ "bp": #F8A73F,
-  /* NameClass */ "nc": #F8A73F,
+  /* NameBuiltinPseudo */ "bp": #7192e1,
+  /* NameClass */ "nc": #7192e1,
   /* NameConstant */ "no": #59a8d9,
-  /* NameDecorator */ "nd": #F8A73F,
+  /* NameDecorator */ "nd": #7192e1,
   /* NameEntity */ "ni": #59a8d9,
   /* NameException */ "ne": #59a8d9,
   /* NameFunction */ "nf": #59a8d9,
   /* NameFunctionMagic */ "fm": #19b9c4,
   /* NameLabel */ "nl": #59a8d9,
   /* NameNamespace */ "nn": #59a8d9,
-  /* NameOther */ "nx": #853f29,
+  /* NameOther */ "nx": #ff7449,
   /* NameProperty */ "py": #59a8d9,
   /* NameTag */ "nt": #59a8d9,
   /* NameVariable */ "nv": #59a8d9,
@@ -313,7 +313,7 @@ $code-highlight-color-map-dark: (
   /* LiteralNumberInteger */ "mi": #ff8e8e,
   /* LiteralNumberIntegerLong */ "il": #ff8e8e,
   /* LiteralNumberOct */ "mo": #ff8e8e,
-  /* Operator */ "o": #F8A73F,
+  /* Operator */ "o": #7192e1,
   /* OperatorWord */ "ow": #91C3F3,
   /* Comment */ "c": #7e848f,
   /* CommentHashbang */ "ch": #7e848f,
