@@ -44,10 +44,10 @@ $global-border-color-dark: #363636 !default;
 
 // ========== Scrollbar ========== //
 // Color of the scrollbar
-$scrollbar-color: #cdcdcd !default;
+$scrollbar-color: #f7efef !default;
 
 // Color of the hover scrollbar
-$scrollbar-hover-color: #ff7449 !default;
+$scrollbar-hover-color: #e2e2e2 !default;
 // ========== Scrollbar ========== //
 
 // ========== Selection ========== //
@@ -186,7 +186,7 @@ $code-type-list:
 
 // Color map of the code highlight
 $code-highlight-color-map: (
-  /* Parentheses */ "p": #ff7449,
+  /* Parentheses */ "p": #5749ff,
   /* Keyword */ "k": #0b0093,
   /* KeywordConstant */ "kc": #0b0093,
   /* KeywordDeclaration */ "kd": #0b0093,
